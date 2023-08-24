@@ -1,0 +1,13 @@
+<h1>To Do List</h1>
+<div *ngIf="gratsMessage()">
+<p *ngFor="let t of allToDo">{{t.task}}:
+    completed: {{t.completed}} <button *ngIf="t.completed==false" (click)="completeTask(t)">DONE</button>
+</p>
+</div>
+
+<h1 *ngIf="!gratsMessage()">You're the best!!</h1>
+
+<p>Task Name:</p>
+<input type="text" [(ngModel)]="newToDo.task"> 
+<button (click) ="addTask()"> Add To Do</button>
+
